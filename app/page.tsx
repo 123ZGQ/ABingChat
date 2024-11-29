@@ -33,7 +33,20 @@ export default function Home() {
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
+      
+      if (data.error) {
+        console.error('API error:', data.error);
+        setMessages(prev => [...prev, {
+          role: 'assistant',
+          content: '抱歉，发生了一些错误，请稍后再试。'
+        }]);
+        return;
+      }
       
       if (data.choices?.[0]?.message) {
         const assistantMessage: Message = {
@@ -44,6 +57,10 @@ export default function Home() {
       }
     } catch (error) {
       console.error('Failed to send message:', error);
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: '网络错误，请检查您的连接并重试。'
+      }]);
     } finally {
       setIsLoading(false);
     }
