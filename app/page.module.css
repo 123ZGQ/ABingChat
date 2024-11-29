@@ -1,0 +1,147 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f7;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.5px;
+}
+
+.chatContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageArea {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inputContainer {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 125, 250, 0.3);
+}
+
+.sendButton {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0071e3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sendButton:hover {
+  background: #0077ed;
+}
+
+.message {
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border-radius: 12px;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.userMessage {
+  background-color: #007AFF;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+  padding: 1rem 1.2rem;
+}
+
+.assistantMessage {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  align-self: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.loading {
+  padding: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.messageArea {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.input:disabled,
+.sendButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.messageLine {
+  margin: 0.3rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.emptyLine {
+  height: 0.5rem;
+}
+
+.codeLine {
+  font-family: monospace;
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.markdown {
+  font-size: 1rem;
+  line-height: 1.6;
+} 
